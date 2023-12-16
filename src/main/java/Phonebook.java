@@ -13,9 +13,14 @@ public class Phonebook {
      * @param contact is the Person that we created and just adding it
      */
     public void addContact(Person contact){
-        contacts.add(contact);
-    }
 
+        if(!(contact.getPhone()==null)){
+        contacts.add(contact);
+        }
+        else{
+            System.out.println("You are NOT a member as your PhoneNumber doesn't have Value");
+        }
+    }
     /**
      * A Method to find a specific user's phone number by entering him/her name
      * @param name is the name of our contact
