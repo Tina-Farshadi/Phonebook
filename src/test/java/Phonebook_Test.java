@@ -17,12 +17,10 @@ public class Phonebook_Test {
 
     public Phonebook_Test() {
         this.contacts = new ArrayList<>();
-
     }
 
     @Test
     void getAllContacts_test(){
-
         Person person=new Person("Tina","09123456789");
         Person person1=new Person("Tara","0");
         Person person2=new Person("T","09129388787");
@@ -37,6 +35,7 @@ public class Phonebook_Test {
 
     @Test
     void getPhoneNumber_test(){
+
         Person person=new Person("Tina","09123456789");
         Person person1=new Person("Tara","0");
         Phonebook phonebook=new Phonebook();
@@ -67,6 +66,19 @@ public class Phonebook_Test {
         assertEquals(0,phonebook.updateContactName("Tara","Sara"));
         assertEquals(1,phonebook.updateContactName("Tina","Alma"));
         assertEquals(0,phonebook.updateContactName("Tina","Tt"));
+    }
+
+    @Test
+    void deleteContact_test(){
+        Person person=new Person("Tina","09123456789");
+        Person person1=new Person("T","09129388787");
+        Phonebook phonebook=new Phonebook();
+        phonebook.addContact(person);
+        phonebook.addContact(person1);
+        assertEquals(0,phonebook.deleteContact("Tara"));
+        assertEquals(1,phonebook.deleteContact("Tina"));
+        contacts.add(person1);
+        assertEquals(contacts,phonebook.getAllContacts());
     }
 
 
