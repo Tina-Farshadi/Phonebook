@@ -80,7 +80,10 @@ public class Phonebook {
             if (contact == null)
                 return 0;
             else if (Objects.equals(contact.getName(), name)) {
+                if(newPhone.length() == 11 && newPhone.charAt(0) == '0' && newPhone.charAt(1) == '9')
                 contact.setPhone(newPhone);
+                else
+                    System.out.println("Invalid Phone Number! Try again!!");
                 return 1;
             }
         }
