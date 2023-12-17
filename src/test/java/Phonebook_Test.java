@@ -85,13 +85,13 @@ public class Phonebook_Test {
         phonebook.addContact(person2);
 
         phonebook.setAllContactsHidden();
-        assertEquals(true,person.isHidden());
-        assertEquals(false,person1.isHidden());
-        assertEquals(true,person2.isHidden());
+        assertTrue(person.isHidden());
+        assertFalse(person1.isHidden());
+        assertTrue(person2.isHidden());
 
         phonebook.setAllContactsUnHidden();
-        assertEquals(false,person.isHidden());
-        assertEquals(false,person2.isHidden());
+        assertFalse(person.isHidden());
+        assertFalse(person2.isHidden());
     }
 
     @Test
