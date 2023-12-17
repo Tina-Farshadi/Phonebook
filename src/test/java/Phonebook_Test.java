@@ -96,10 +96,14 @@ public class Phonebook_Test {
 
     @Test
     void toString_test(){
-        
         String tostring= "Name: "+"Tina"+" - Phone number: "+"09123456789";
         assertEquals(tostring,person.toString());
     }
 
+    @Test
+    void getId_test(){
+        assertEquals(1,person.getId());
+        assertEquals(2,person2.getId());
+    }
 
 }

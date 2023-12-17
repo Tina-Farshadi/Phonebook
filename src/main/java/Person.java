@@ -1,16 +1,16 @@
 public class Person {
     private String name;
     private String phone;
-    static int identifier = 1;
+    static int identifier = 0;
     private final int id;
     private boolean isHidden;
 
 
     public Person(String name, String phone) {
-
         try {
             if (phone.length() == 11 && phone.charAt(0) == '0' && phone.charAt(1) == '9'){
                 this.phone = phone;
+                identifier++;
             }
             else  throw new IllegalArgumentException();
 
@@ -20,7 +20,7 @@ public class Person {
         this.isHidden = false;
         this.name = name;
         this.id = identifier;
-        identifier++;
+
 }
 
     public String getName() {
