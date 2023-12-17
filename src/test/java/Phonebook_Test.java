@@ -94,5 +94,12 @@ public class Phonebook_Test {
         assertEquals(false,person2.isHidden());
     }
 
+    @Test
+    void toString_test(){
+        
+        String tostring= "Name: "+"Tina"+" - Phone number: "+"09123456789";
+        assertEquals(tostring,person.toString());
+    }
+
 
 }

@@ -11,14 +11,14 @@ public class Person {
         try {
             if (phone.length() == 11 && phone.charAt(0) == '0' && phone.charAt(1) == '9'){
                 this.phone = phone;
-                this.isHidden = false;
-                this.name = name;
             }
             else  throw new IllegalArgumentException();
 
         }catch (IllegalArgumentException e){
             System.out.println("The Number Should have 11 digits and starts with 09");
         }
+        this.isHidden = false;
+        this.name = name;
         this.id = identifier;
         identifier++;
 }
@@ -61,6 +61,10 @@ public class Person {
 
     @Override
     public String toString() {
+
+        if (phone==null){
+            System.out.println("Notice that You are NOT a member as your PhoneNumber doesn't have Value");
+        }
         return "Name: " + name + " - Phone number: " + phone;
     }
 }
