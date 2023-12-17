@@ -98,6 +98,7 @@ public class Phonebook_Test {
     void toString_test(){
         String tostring= "Name: "+"Tina"+" - Phone number: "+"09123456789";
         assertEquals(tostring,person.toString());
+        assertEquals("Name: Tara - Phone number: null",person1.toString());
     }
 
     @Test
