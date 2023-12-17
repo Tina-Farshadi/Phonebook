@@ -14,17 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Phonebook_Test {
     final ArrayList<Person> contacts;
-
+    Person person=new Person("Tina","09123456789");
+    Person person1=new Person("Tara","0");
+    Person person2=new Person("T","09129388787");
+    Phonebook phonebook=new Phonebook();
     public Phonebook_Test() {
         this.contacts = new ArrayList<>();
     }
 
     @Test
     void getAllContacts_test(){
-        Person person=new Person("Tina","09123456789");
-        Person person1=new Person("Tara","0");
-        Person person2=new Person("T","09129388787");
-        Phonebook phonebook=new Phonebook();
         phonebook.addContact(person);
         phonebook.addContact(person1);
         phonebook.addContact(person2);
@@ -35,10 +34,6 @@ public class Phonebook_Test {
 
     @Test
     void getPhoneNumber_test(){
-
-        Person person=new Person("Tina","09123456789");
-        Person person1=new Person("Tara","0");
-        Phonebook phonebook=new Phonebook();
         phonebook.addContact(person);
         phonebook.addContact(person1);
         assertEquals("09123456789",phonebook.getPhoneNumber("Tina"));
@@ -47,9 +42,6 @@ public class Phonebook_Test {
 
     @Test
     void getContact_test(){
-        Person person=new Person("Tina","09123456789");
-        Person person1=new Person("Tara","0");
-        Phonebook phonebook=new Phonebook();
         phonebook.addContact(person);
         phonebook.addContact(person1);
         assertEquals(0,phonebook.getContact("Tara"));
@@ -58,9 +50,6 @@ public class Phonebook_Test {
 
     @Test
     void updateContactName(){
-        Person person=new Person("Tina","09123456789");
-        Person person1=new Person("Tara","0");
-        Phonebook phonebook=new Phonebook();
         phonebook.addContact(person);
         phonebook.addContact(person1);
         assertEquals(0,phonebook.updateContactName("Tara","Sara"));
@@ -70,14 +59,11 @@ public class Phonebook_Test {
 
     @Test
     void deleteContact_test(){
-        Person person=new Person("Tina","09123456789");
-        Person person1=new Person("T","09129388787");
-        Phonebook phonebook=new Phonebook();
         phonebook.addContact(person);
         phonebook.addContact(person1);
         assertEquals(0,phonebook.deleteContact("Tara"));
         assertEquals(1,phonebook.deleteContact("Tina"));
-        contacts.add(person1);
+       contacts.remove(person);
         assertEquals(contacts,phonebook.getAllContacts());
     }
 
