@@ -123,7 +123,7 @@ public class Phonebook {
         for (Person contact : contacts) {
             if(contact == null)
                 return;
-            contact.setHidden();
+                contact.setHidden();
         }
     }
     /**

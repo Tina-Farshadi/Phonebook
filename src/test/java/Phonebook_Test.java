@@ -77,5 +77,17 @@ public class Phonebook_Test {
         assertEquals(1,phonebook.updateContactPhoneNumber("T","00"));
     }
 
+    @Test
+    void setAllContactsHidden_test(){
+
+        phonebook.addContact(person);
+        phonebook.addContact(person1);
+        phonebook.addContact(person2);
+        phonebook.setAllContactsHidden();
+        assertEquals(true,person.isHidden());
+        assertEquals(false,person1.isHidden());
+        assertEquals(true,person2.isHidden());
+    }
+
 
 }
