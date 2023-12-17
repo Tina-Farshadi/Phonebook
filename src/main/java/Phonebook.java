@@ -13,7 +13,6 @@ public class Phonebook {
      * @param contact is the Person that we created and just adding it
      */
     public void addContact(Person contact){
-
         if(!(contact.getPhone()==null)){
         contacts.add(contact);
         }
